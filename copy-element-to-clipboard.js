@@ -1,0 +1,1 @@
+javascript:(()=>{ var copyText = document.getElementById('work_name'); navigator.clipboard.writeText(copyText.textContent); })();
