@@ -1,7 +1,11 @@
 javascript: (() => {
+    
     if (document.querySelectorAll('[data-testid=swipe-to-dismiss]').length > 0) {
-        var index = document.querySelectorAll('[data-testid=swipe-to-dismiss]')[0].baseURI.match(/(?<=photo\/)(.*)/)[0]-1;
-        img = document.querySelectorAll('[data-testid=swipe-to-dismiss]')[index].innerHTML.match(/(?<=background-image: url\(\&quot\;)(.*)(?=\&quot\;\)\;)/)[0].replace(/&amp;\w+/, '&name');
+        var index = document.querySelectorAll('[data-testid=swipe-to-dismiss]')[0].baseURI.match(/(?<=photo\/)(.*)/)[0] - 1;
+        var img = document.querySelectorAll('[data-testid=swipe-to-dismiss]')[index].innerHTML.match(/(?<=background-image: url\(\&quot\;)(.*)(?=\&quot\;\)\;)/)[0].replace(/&amp;\w+/, '&name');
+    }
+    else if (document.querySelectorAll('video').length > 0) {
+        var img = document.querySelectorAll('video')[0].src;
     }
     else {
         var img = document.querySelectorAll('[data-testid=tweetPhoto]')[0].lastChild.src;
